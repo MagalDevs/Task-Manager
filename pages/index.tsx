@@ -22,6 +22,7 @@ const Main = () => {
   const [visible, setVisible] = useState(false);
   const [tarefas, setTarefas] = useState(dadosExemplo);
 
+  // Renderiza cada item da lista de tarefas
   const renderItem = ({ item }: { item: Item }) => (
     <TouchableOpacity style={styles.card}>
       <Text style={styles.cardTitle}>{item.nome}</Text>
@@ -39,6 +40,7 @@ const Main = () => {
     </TouchableOpacity>
   );
 
+  // Adiciona uma nova tarefa à lista
   const addTarefa = (nome: string, descricao: string) => {
     if (nome.trim() === "") return; // Evita adicionar tarefas sem nome
     const tarefaNova = { nome, descricao };
@@ -46,6 +48,7 @@ const Main = () => {
     setVisible(false);
   };
 
+  // Remove uma tarefa da lista pelo índice
   const removeTarefa = (index: number) => {
     const novasTarefas = [...tarefas];
     novasTarefas.splice(index, 1);

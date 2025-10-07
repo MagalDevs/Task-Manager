@@ -11,6 +11,7 @@ interface CreateModalProps {
 const CreateModal = ({ visible, setVisible, addTarefa }: CreateModalProps) => {
   const [nome, setNome] = useState("");
   const [descricao, setDescricao] = useState("");
+
   return (
     <Portal>
       <Dialog
